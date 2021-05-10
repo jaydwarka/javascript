@@ -27,6 +27,36 @@
     </style>
 </head>
 <body>
-<h1></h1>
+<h1>monkey shuffle</h1>
+<div id="pics">
+    <img src="../h5/img/monkey 1.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 2.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 3.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 4.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 5.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 6.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 7.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 8.jpg" height="300" width="300"/>
+<img src="../h5/img/monkey 9.jpg" height="300" width="300"/>
+</div>
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+
+    var randomnummers = [];
+
+    while (randomnummers.length < 9) {
+        random = Math.floor(Math.random() * 9) + 1;
+        if (randomnummers.lastIndexOf(random) == -1) {
+            randomnummers.push(random);
+        }
+    }
+
+    random = 0;
+    for (var plaatje in plaatjes) {
+        plaatjes[plaatje].src = "img/monkey " + randomnummers[random] + ".jpg"
+        random++;
+    }
+</script>
 </body>
 </html>
